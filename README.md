@@ -1,3 +1,10 @@
+# RUn and conisderations
+For a correct use of the application in development, install the packages with Npm Install on the command line,
+both for front and back end. for run the app use npm start. on the localhost 3000 and the back end on localhost 5000.
+The app works as requested. optional login or registration can be done so that when logged in, the new urls are related to that user. And only this one can eliminate them. Authentication allows you to stay logged in over time since the token remains in local storage. If you want to logout, use the navbar logout button.
+There is the home path with the login and register options, the path to the top 100 urls, and the path to create a new short url.
+Make sure you have the backend in this case on localhost 5000, and run it with npm start or node index.js after installing the packages.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -2,16 +2,17 @@ import React from 'react'
 import Swal from 'sweetalert2';
 import { fetchConToken } from '../../helpers/fetch';
 
-export const UrlCard = ({title, shortUrl, nVisits,id}) => {
+export const UrlCard = ({title, shortUrl, nVisits,id,updateDelete}) => {
     const handleDelete = async(e)=>{
         e.preventDefault();
-        console.log(e);
+        
         const resp = await fetchConToken(`urls/${id}`, {}, 'DELETE');
         
         const body = await resp.json();
         
         if (body.ok){
             Swal.fire('Success', `Url ${title}   deleted`, 'success'); 
+            updateDelete(id);
         }else{
             Swal.fire('Error', body.msg, 'error');
         }

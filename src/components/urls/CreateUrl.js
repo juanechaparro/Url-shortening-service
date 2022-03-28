@@ -8,8 +8,9 @@ import { useForm } from '../../hooks/useForm';
 export const CreateUrl = () => {
   const navigate = useNavigate();
   const{user} = useContext(AuthContext);
-  const [ formUrlValues, handleUrlInputChange ] = useForm( {  
-
+  const [ formUrlValues, handleUrlInputChange ] = useForm({
+    title: '',
+    longUrl: '',
   });
  const  {title, longUrl} = formUrlValues;
 

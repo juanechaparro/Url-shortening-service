@@ -6,7 +6,13 @@ import { UrlCard } from './UrlCard';
 
 
 export const UrlsList = () => {
-  const {loading, urls} = useFetchUrls();
+  const [{loading, urls}, setUrlsState] = useFetchUrls();
+  const updateDelete = (id)=>{
+      setUrlsState({
+          loading,
+          urls: urls.filter(url=>url.id !== id)
+      })
+  }
   const navigate = useNavigate();
   return (
     <>
@@ -19,8 +25,11 @@ export const UrlsList = () => {
          
              <div className = "card-grid">
              {
-                urls.map((url)=><UrlCard key={url.id}
-                {...url}/>)
+                urls.map((url)=><UrlCard
+                 key={url.id}
+                {...url} 
+                updateDelete ={updateDelete}
+                />)
              }
              </div>
            

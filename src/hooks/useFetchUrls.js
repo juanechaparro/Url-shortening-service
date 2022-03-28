@@ -29,7 +29,7 @@ export const useFetchUrls = ()=>{
       })
     
      
-    }, [state.urls])
-    return state;
+    }, []);
+    return [state, setState];
 }
 
